@@ -4,8 +4,7 @@
   padding: 0;
   margin: 0;
   font-family: "Poppins", sans-serif;
-
-  /* font-family: "Poppins", sans-serif; */
+  box-sizing: border-box;
 }
 html {
   scroll-behavior: smooth;
@@ -27,7 +26,7 @@ body {
   opacity: 0.69;
   background-color: black;
   position: absolute;
-  top: 0%;
+  top: 0;
 }
 nav {
   display: flex;
@@ -118,15 +117,18 @@ nav button {
   border-radius: 4px;
   font-size: 20px;
   font-weight: 500;
-  /* text-align: center; */
+  text-align: center;
+  text-wrap: nowrap;
 }
 .main input {
-  padding: 7px 101px 8px 14px;
+  padding: 9px 34px;
   border-radius: 4px;
   font-size: 12px;
   background-color: rgba(24, 24, 24, 0.7);
   border: 2px solid hsl(0, 1%, 29%);
   color: rgb(255, 255, 255);
+  width: 100%;
+  max-width: none;
 }
 
 .hero-btns {
@@ -145,7 +147,8 @@ nav button {
 }
 
 .secimg img {
-  width: 555px;
+  width: 100%;
+  max-width: 555px;
   position: relative;
   z-index: 10;
 }
@@ -156,12 +159,14 @@ nav button {
   position: absolute;
   top: 51px;
   right: 0;
-  width: 555px;
+  width: 100%;
+  max-width: 555px;
 }
 section.first > div {
   display: flex;
   flex-direction: column;
   padding: 34px 0;
+  max-width: 100%;
 }
 section.first > div :nth-child(1) {
   font-size: 48px;
@@ -237,10 +242,12 @@ footer a {
     flex-wrap: wrap;
   }
   .secimg img {
-    width: 305px;
+    width: 100%;
+    max-width: 305px;
   }
   .secimg video {
-    width: 305px;
+    width: 100%;
+    max-width: 305px;
   }
   .hero > :first-child {
     font-size: 32px;
@@ -269,5 +276,53 @@ footer a {
   }
   .foot-item {
     align-items: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+  }
+  nav img {
+    margin-bottom: 20px;
+  }
+  nav button {
+    margin-bottom: 10px;
+  }
+  .hero > :first-child {
+    font-size: 28px;
+  }
+  .hero > :nth-child(2) {
+    font-size: 16px;
+  }
+  .hero > :nth-child(3) {
+    font-size: 14px;
+  }
+  .hero-btns {
+    flex-direction: column;
+    width: 100%;
+  }
+  .main input {
+    width: 100%;
+    max-width: none;
+    padding: 7px 14px;
+  }
+  .btn-red {
+    width: 100%;
+  }
+  .first {
+    max-width: 100%;
+    padding: 20px;
+  }
+  .secimg img,
+  .secimg video {
+    max-width: 100%;
+  }
+  .faq-box {
+    max-width: 90vw;
+  }
+  footer {
+    padding: 20px 0;
   }
 }
